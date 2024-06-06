@@ -3,7 +3,7 @@ process.stdin.setEncoding("utf8");
 
 const readline = require("readline");
 
-// readline インターフェースを設定
+// "readline"インターフェースを設定
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -14,21 +14,21 @@ let inputLines = [];
 // 処理中の行番号を示す変数
 let currentLine = 0;
 
-// 標準入力に入力を行うたびに inputLines 配列に追加する
+// 標準入力に入力を行うたびに"inputLines"配列に追加する
 rl.on("line", (line) => {
   inputLines.push(line);
 }).on("close", () => {
-  // すべての入力が完了後に bingo_result 関数を実行する
+  // すべての入力が完了後に"bingo_result"関数を実行する
   bingo_result();
 });
 
-// 現在の行の情報を返し、currentLine をインクリメントする
+// 現在の行の情報を返し、"currentLine"をインクリメントする
 function readLine() {
   return inputLines[currentLine++];
 }
 
 function bingo_result() {
-  // ビンゴカードのサイズ S を読み取る
+  // ビンゴカードのサイズ"S"を読み取る
   const S = parseInt(readLine().trim());
   const bingoCard = [];
 
@@ -37,7 +37,7 @@ function bingo_result() {
     bingoCard.push(readLine().trim().split(" "));
   }
 
-  // 選ばれた単語の数 N を読み取る
+  // 選ばれた単語の数"N"を読み取る
   const N = parseInt(readLine().trim());
   // 選ばれた単語を格納するセット
   const selectedWords = new Set();
@@ -61,14 +61,14 @@ function bingo_result() {
 
   // ビンゴが成立しているかどうかをチェックする関数
   const checkBingo = () => {
-    // 行のチェック
+    // 行(横の列)のチェック
     for (let i = 0; i < S; i++) {
       if (marked[i].every((cell) => cell)) {
         return true;
       }
     }
 
-    // 列のチェック
+    // 列(縦の列)のチェック
     for (let j = 0; j < S; j++) {
       let columnComplete = true;
       for (let i = 0; i < S; i++) {
