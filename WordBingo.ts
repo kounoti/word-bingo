@@ -1,7 +1,7 @@
-import readline from "readline";
-
 process.stdin.resume();
 process.stdin.setEncoding("utf8");
+
+const readline = require("readline");
 
 // "readline"インターフェースを設定
 const rl = readline.createInterface({
