@@ -1,3 +1,5 @@
+import { workerData } from "worker_threads";
+
 process.stdin.resume();
 process.stdin.setEncoding("utf8");
 
@@ -27,6 +29,7 @@ const readLine = (): string => {
   return inputLines[currentLine++];
 };
 
+// ビンゴが成立している場合は"yes"を、成立していない場合は"no"を返す関数
 const bingo_result = (): void => {
   // ビンゴカードのサイズ"S"を読み取る
   const S: number = parseInt(readLine().trim());
